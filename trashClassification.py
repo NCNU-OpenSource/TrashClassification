@@ -132,7 +132,7 @@ def main():
         while True:
             print("raspberry is on")
             if button.is_pressed:
-                print("button.is pressed")
+                print("button is pressed")
                 #other_led.off()
                 photoPath, shortPath = take_photo("")
                 # Run photo through Lobe TF model

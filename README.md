@@ -1,26 +1,28 @@
 ## Concept Development
-> **發展理念：為什麼要開發這個東西？有什麼用？**[color=red]
+> **發展理念：為什麼要開發這個東西？有什麼用？**
 - 丟垃圾時，偶爾會不清楚手上的垃圾屬於哪個分類，就呆站在垃圾桶前陷入無窮迴圈的沉思，導致在垃圾桶前大排長龍，甚至最終還是丟錯了垃圾。
 - 我們開發的這個辨識回收種類的儀器，旨意就是在解決這項問題，除了讓垃圾桶前的人潮不會擠的水洩不通，也可以讓垃圾正確分類，使地球更美好XD
 ::: info
 暨大宿舍生最大的噩夢，就是每次倒垃圾的時候，只要沒有正確的垃圾分類觀念，隨之而來的即是阿伯「伶刀西郎」的親切問候(哭)，所以為了避免家人遭受無辜的挨罵，我們決定做一個自動分類垃圾的神器，相信有了它，我們將不再恐懼倒垃圾，也不用擔心阿伯有天會氣到中風！
 :::
 ## Implementation Resources
-> **應用到的資源：樹莓派？(硬體、軟體？)<有用到都要列出來>、買的詳列從哪買的(價錢)**[color=red]
+> **應用到的資源：樹莓派？(硬體、軟體？)<有用到都要列出來>、買的詳列從哪買的(價錢)**
 - 軟體
-    - Lobe(線上資源，免費)： 影像辨識模型訓練
+    - Lobe(線上資源，免費): 影像辨識模型訓練
     - Raspberry Pi OS(樹莓派的作業系統)
 - 硬體
-    - pi Camera X 1 ($1020)
+    - [pi Camera X 1 ($1020)](https://shopee.tw/%E6%A8%B9%E8%8E%93%E6%B4%BERaspberry-Pi-%E5%8E%9F%E5%BB%A0%E7%9B%B8%E6%A9%9F%E9%85%8D%E4%BB%B6-Raspberry-Pi-camera-module-v2-i.143152281.4228122711)
     - 樹莓派(pi4) X 1 ($2360)
     - 杜邦線(公公、公母、母母)數條 (borrow)
     - 按鈕 X 1 (borrow)
     - LED燈泡 X 6 (borrow)
-    - 麵包板 X 2 (一塊 $50)
+    - [麵包板 X 2 (一塊 $50)](https://shopee.tw/-%E7%92%B0%E5%B3%B6%E7%A7%91%E6%8A%80-%E9%BA%B5%E5%8C%85%E6%9D%BF830%E5%AD%94%E7%B4%85%E8%97%8D%E7%B7%9A%E7%84%A1%E7%84%8A%E9%BA%B5%E5%8C%85%E6%9D%BF%E5%85%8D%E7%84%8A%E5%BC%8F%E6%B8%AC%E8%A9%A6%E9%9B%BB%E8%B7%AF%E6%9D%BF%E8%90%AC%E8%83%BD%E6%9D%BF-i.280233910.4548815084
+)
     - 電阻 X 8 (borrow)
     - 樹莓派的鍵盤 X 1 ($720)
     - 樹莓派的滑鼠 X 1 ($350)
-    - 馬達 X 2 (一顆 $150)
+    - [馬達 X 2 (一顆 $150)](https://shopee.tw/%E3%80%90%E7%92%B0%E5%B3%B6%E7%A7%91%E6%8A%80%E3%80%91(F3-3-4)%E2%98%85%E5%85%A8%E8%87%BA%E7%8F%BE%E8%B2%A8%E2%98%85-MG996-MG996R-13KG-%E5%A4%A7%E6%89%AD%E5%8A%9B%E8%88%B5%E6%A9%9F-%E6%A9%9F%E5%99%A8%E4%BA%BA-%E9%87%91%E5%B1%AC%E9%BD%92%E8%BC%AA%E8%88%B5%E6%A9%9F-%E4%BC%BA%E6%9C%8D%E9%A6%AC-i.280233910.7843762681
+)
 - 外觀
     - 紙箱($30)
     - 竹筷子($)
@@ -31,17 +33,19 @@
     - 紙膠帶
     - 塑膠袋(垃圾袋)
 ## Existing Library/Software
-> **使用了哪些現有的函式庫或軟體 要在這個部分說明條列**[color=red]
+> **使用了哪些現有的函式庫或軟體 要在這個部分說明條列**
 - 基於影像辨識
-- 主程式 ==`trashClassification.py`==
+- 主程式 `trashClassification.py`
     - [主程式-參考網址](https://www.hackster.io/jenfoxbot/make-a-pi-trash-classifier-with-ml-e037a6)
     - 根據上方網址的程式碼做更改，新增馬達轉動的功能、將照片路徑加入資料庫
 
 ## Implementation Process
-> **實作過程**[color=red]
+> **實作過程**
 - 在家目錄下 clone 我們的檔案
     - `cd ~`
-    - ==`git clone URL`==
+    - `git clone https://github.com/Huei-Lin-Lin/TrashClassification.git`
+    - `sudo apt-get update`
+    - `sudo apt-get install python3.6`
 ### 樹莓派 與 LED 與 攝影鏡頭模組
 - 樹莓派
 - LED燈(杜邦線、麵包板、按鈕)
@@ -61,132 +65,8 @@
 	![](https://i.imgur.com/K25Bm5F.png =50%x)
 ### 軟體主程式
 - **目的:** 藉由壓下按鈕讓pi camera拍完照，透過Lobe影像辨識的套件，並且將便是結果顯示正確地顯示在五個LED燈上，
-- 打開主程式(trashClassification.py)
-``` python=
-- # ------------------------------------------------------------------------
-# Trash Classifier ML Project
-# Please review ReadMe for instructions on how to build and run the program
-#
-# (c) 2020 by Jen Fox, Microsoft
-# MIT License
-# --------------------------------------------------------------------------
+- 打開 `trash.py`
 
-#import Pi GPIO library button class
-from gpiozero import Button, LED, PWMLED
-from picamera import PiCamera
-from time import sleep
-
-from lobe import ImageModel
-import time
-
-#Create input, output, and camera objects
-button = Button(2)
-
-yellow_led = LED(17) # Paper
-blue_led = LED(27) # PET bottle
-green_led = LED(22) # ElecAppliances
-red_led = LED(23) # Plastic
-white_led = PWMLED(24) # Status light and retake photo
-other_led = LED(18) 
-
-camera = PiCamera()
-
-label = ""
-# Load Lobe TF model
-# --> Change model file path as needed
-model = ImageModel.load('/home/pi/Lobe/model')
-# Identify prediction and turn on appropriate LED
-# Take Photo
-def take_photo(path):
-    nowTime = str(int(time.time())) # 時戳
-    shortPath = "./photo/" + nowTime + ".jpg"
-    path = "/var/www/html/photo/" + nowTime + ".jpg"
-
-    # Quickly blink status light
-    white_led.blink(0.1,0.1)
-    sleep(2)
-    print("Pressed")
-    white_led.on()
-    # Start the camera preview
-    camera.start_preview(alpha=200)
-    # wait 2s or more for light adjustment
-    sleep(3)
-    # Optional image rotation for camera
-    # --> Change or comment out as needed
-    #camera.rotation = 270
-    camera.rotation = 0
-    #Input image file path here
-    # --> Change image path as needed
-    camera.capture(path)
-    #Stop camera
-    camera.stop_preview()
-    white_led.off()
-    sleep(1)
-    return path, shortPath
-
-def led_select(label):
-    print(label)
-    motor1 = Motor(4)
-    motor2 = Motor(25)
-    if label == "Paper": # front
-        yellow_led.on()
-        sleep(5)
-
-    if label == "ElecAppliances": #back
-        blue_led.on()
-        sleep(5)
-
-
-    if label == "Plastic": #left
-        green_led.on()
-        sleep(5)
-
-    if label == "PET bottle": #right
-        red_led.on()
-        sleep(5)
-
-    if label == "other":
-        other_led.on()
-        sleep(5)
-    else:
-        yellow_led.off()
-        blue_led.off()
-        green_led.off()
-        red_led.off()
-        white_led.off()
-
-def main():
-# Main Function
-    yellow_led.off()
-    white_led.off()
-    blue_led.off()
-    green_led.off()
-    red_led.off()
-    other_led.off()
-    try:
-        while True:
-            print("raspberry is on")
-            if button.is_pressed:
-                print("button.is pressed")
-                #other_led.off()
-                photoPath, shortPath = take_photo("")
-                # Run photo through Lobe TF model
-                result = model.predict_from_file(photoPath)
-                label = result.prediction
-                # --> Change image path
-                led_select(result.prediction)
-                # 插入資料庫
-                insertPhotoToDB(shortPath, label)
-            else:
-                print("button is not pressed")
-                # Pulse status light
-                white_led.pulse(2,1)
-            sleep(1)
-    except KeyboardInterrupt:
-        print('關閉程式')
-
-main()
-```
 ### LOBE
 - 利用 Lobe 製作影像辨識模型之實作過程
     1. 先取得回收種類樣本照片(類別：ElecAppliances、Paper、PET bottle、Plastic、other)。
@@ -207,31 +87,11 @@ main()
 - **硬體材料:** MG996R伺服馬達 X 2 ， 杜邦線 X 6
 - **軟體程式:** python
 - ==**step 1**== 首先在python的程式撰寫上，將馬達包成一個物件，之後讓主程式引用，這樣既可以實現多馬達的控制，也可以讓主程式不會太複雜。
-	- 打開以下是`Motor.py` 的完整程式
-	```python=
-	import RPi.GPIO as GPIO
-	import time 
-	class Motor:
-    	PWM_FREQ = 50
-    	#STEP = 90 #rotate angle
-    	def __init__(self,CONTROL_PIN)  :     
-        	self.CONTROL_PIN = CONTROL_PIN
-        	GPIO.setmode(GPIO.BCM)
-        	GPIO.setup(self.CONTROL_PIN, GPIO.OUT)
-        	self.pwm = GPIO.PWM(CONTROL_PIN, Motor.PWM_FREQ)
-        	self.pwm.start(0)
-        	print("Motor Set up already!!")
-       
-    	def change_duty_cycle(self,angle):
-        	print('角度={: >3}'.format(angle))
-        	duty_cycle = (0.05 * Motor.PWM_FREQ) + (0.19 * Motor.PWM_FREQ * angle / 180)
-        	self.pwm.ChangeDutyCycle(duty_cycle)
-        	time.sleep(0.3)
-	```
+	- 打開 `Motor.py` 的完整程式
 - ==**step 2**== 再將程式引用到主程式之前，我們先了解這次兩顆馬達的實際應用範圍，我們用以下這張圖來解釋:
     ![](https://i.imgur.com/lIL3Mlo.png)
     > p.s. 紅色的馬達負責做水平的180度旋轉，藍色的馬達負責做左右傾倒，讓平台傾倒上方的垃圾
--  ==**step 3**== 接著我們回到主程式(`trashClassification.py`)，首先我們要先加上這行，引入寫好的馬達物件
+-  ==**step 3**== 接著我們回到主程式 `trashClassification.py` ，首先我們要先加上這行，引入寫好的馬達物件
 	```python= 
 	from Motor import Motor
 	```
@@ -272,44 +132,7 @@ main()
 	```
 - ==**step 4**== 已經把程式寫好了，接下來就來實際讓馬達連接樹梅派看看
 	![](https://i.imgur.com/yRNxAXm.png)
--  ==**step 5**== 運行以下的測試程式`motortest.py`，讓我們查看馬達是否能動
-```python= 
-import RPi.GPIO as GPIO
-CONTROL_PIN = 4  # it means GPIO4 = 7
-PWM_FREQ = 50
-STEP=90 
- 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(CONTROL_PIN, GPIO.OUT)
- 
-pwm = GPIO.PWM(CONTROL_PIN, PWM_FREQ)
-pwm.start(0)
- 
-def angle_to_duty_cycle(angle=0):
-    duty_cycle = (0.05 * PWM_FREQ) + (0.19 * PWM_FREQ * angle / 180)
-    return duty_cycle
- 
-try:
-    print('按下 Ctrl-C 可停止程式')
-    for angle in range(0, 181, STEP):
-        dc = angle_to_duty_cycle(angle)
-        pwm.ChangeDutyCycle(dc)
-        print('角度={: >3}, 工作週期={:.2f}'.format(angle, dc))
-        time.sleep(2)
-    for angle in range(180, -1, -STEP):
-        dc = angle_to_duty_cycle(angle)
-        print('角度={: >3}, 工作週期={:.2f}'.format(angle, dc))
-        pwm.ChangeDutyCycle(dc)
-        time.sleep(2)
-    pwm.ChangeDutyCycle(angle_to_duty_cycle(90))
-    while True:
-        next
-except KeyboardInterrupt:
-    print('關閉程式')
-finally:
-    pwm.stop()
-    GPIO.cleanup()
-```
+-  ==**step 5**== 運行馬達測試程式 `motortest.py`，讓我們查看馬達是否能動
 -  ==**step 6**== 現在準備來架設我們的...
 	![](https://i.imgur.com/rAwWzpb.png =70%x)
 	- 需要的材料有 竹筷 * 1，保麗龍 * 1，紙碗 * 1，白底的厚紙板 * 1
@@ -324,7 +147,7 @@ finally:
     - 最後就是將平台與兩伺服馬達底座相結合，這一來，我們的自動傾倒平台就完成了!!
     - ![](https://i.imgur.com/asxX7L7.png)
 
-## 垃圾分類桶構造
+### 垃圾分類桶構造
 - ![](https://i.imgur.com/ga2Iayr.png)
 - ![](https://i.imgur.com/Uyd4Id9.jpg)
 ### 網頁呈現(頁面、資料庫)
@@ -391,9 +214,9 @@ finally:
     * ![](https://i.imgur.com/1n5mM9r.png)
     * 如果忘了 MySQL 相關資料，可以到 `/etc/phpmyadmin` 下的 `config.inc.php` 看相關資料
     * ![](https://i.imgur.com/ZN8Wvp8.png)
-* ==執行測試檔案 `trashPhoto.py`==
+* 執行測試檔案 `trashPhoto.py`
     * `cd ~/TrashClassification/`
-    * `./trashPhoto.py`
+    * `python3 trashPhoto.py`
         *  資料寫進資料庫了!
 7. 編輯 HTML 網頁
     * 將剛剛下載 TrashClassification 中的 `listUI.php` 移至 `/var/www/html` 下
@@ -408,34 +231,61 @@ finally:
 	* `sudo service apache2 reload`
 - 架好了 !
     - ![](https://i.imgur.com/vu6fWRC.png)
+### 執行主程式 `trashClassification.py`
+- `cd ~/TrashClassification/`
+- `python3 trashClassification.py`
 
 ## Knowledge from Lecture
-> **從我們這堂課那部分學到的：**[color=red]
-- 
-## Installation
-> **開始教人家怎麼安裝：**[color=red]
-- 安裝 Lobe => (官網：https://www.lobe.ai/)
+> **從我們這堂課那部分學到的：**
+- 我們使用 ssh 連線到樹莓派裡 => [課堂教學：ssh連線](https://hackmd.io/@ncnu-opensource/By4H6JLNW/%2Fwl1BJaOIRQqavZ5rn0jMNQ?type=book)
+- 樹莓派 => [課堂教學：樹莓派](https://hackmd.io/@ncnu-opensource/By4H6JLNW/https%3A%2F%2Fhackmd.io%2FNpR3bL4UQViidcrJaqYlpw%3Fview?type=book)
+- 我們使用 Apache2 => [課堂教學：Web Sever](https://hackmd.io/@ncnu-opensource/By4H6JLNW/%2FI_xmNNBvSEWLw0mcMDhcMA?type=book)
 ## Usage
-> **解釋怎麼使用：**[color=red]
-
+> **解釋怎麼使用：**
 - Step 1
     - 放入要辨識的垃圾到平台上
 - Step 2
+    - 執行主程式 
+    - `cd ~/TrashClassification/`
+    - `python3 trashClassification.py`
+- Step 3
     - 長按 3 秒按鈕，使其開始辨識
 - Step 3
     - 等待平台自動分類並傾倒垃圾至正確的垃圾袋 
+- Step 4
+    - 觀察麵包板上的 LED 燈（會顯示正確分類）
+- Step 5
+    - 觀察網頁上的垃圾快照與分類結果
 
-
-       
 ## Job Assignment
-> **作業分配：《組員貢獻多少%資源》**[color=red]
+> **作業分配：《組員貢獻多少%資源》**
+- 後端: `林惠霖`
+    -  (python) 每次拍完照片就將照片 insert 到資料庫裡
+    -  PHP: fetch 資料
+    -  建資料庫
+- 前端: `王俞文`
+    -  網頁頁面: 標籤、照片
+    -  抓後端的資料
+- 馬達控制: `王念祖`
+    -  python 程式碼馬達控制
+    -  自動化馬達平台架設
+- 訓練模型: `黃日亘`
+    -  包含拍照、手動調整模型辨識結果
+- 大家一起做
+    -  將大家寫的東西合在一起、執行
+    -  外觀: 支架、固定
+    -  PPT、github 內容
+    -  錄實作影片
 ## References
-> **我在網路上有參考到什麼資料：《詳列：不管線上資源或線下詢問》**[color=red]
+> **我在網路上有參考到什麼資料：《詳列：不管線上資源或線下詢問》**
 ### 線上資源
 - 此實作參考教程：https://www.hackster.io/jenfoxbot/make-a-pi-trash-classifier-with-ml-e037a6
+- 按鈕
 - 應用的影像辨識軟體「Lobe」：https://www.lobe.ai/
-- 什麼是「TensorFlow Lite」: https://www.tensorflow.org/lite/guide?hl=zh-tw
-
+- 什麼是「TensorFlow Lite」：https://www.tensorflow.org/lite/guide?hl=zh-tw
+- 前端-bootstrap：https://getbootstrap.com/
+- 怎麼將pwn包成物件 https://stackoverflow.com/questions/55714636/how-can-i-use-raspberry-pi-gpio-setup-and-pwm-commands-in-init-function-of-a
 
 ### 線下詢問
-- 郭子緯：詢問如何呈現辨識資料，用網頁呈現~
+- 郭子緯：詢問如何呈現辨識資料 => 用網頁呈現~
+- 墊腳石的店員: 要超大紙箱
