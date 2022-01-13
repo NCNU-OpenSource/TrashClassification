@@ -56,9 +56,9 @@
 		- Plastic 👉 編號23的腳位。
 		- other 👉 編號24的腳位。
 - 攝影鏡頭模組
-![](https://i.imgur.com/uAMRAwv.jpg =40%x)
+![](https://i.imgur.com/uAMRAwv.jpg)
 	- 直接連接到樹莓派上
-	![](https://i.imgur.com/K25Bm5F.png =50%x)
+	![](https://i.imgur.com/K25Bm5F.png)
 ### 軟體主程式
 - **目的:** 藉由壓下按鈕讓pi camera拍完照，透過Lobe影像辨識的套件，並且將便是結果顯示正確地顯示在五個LED燈上，
 - 打開 `trash.py`
@@ -68,13 +68,13 @@
     1. 先取得回收種類樣本照片(類別：ElecAppliances、Paper、PET bottle、Plastic、other)。
     2. 在本機端存成五個資料夾，檔名如類別名稱。
     3. 開啟 Lobe 點選 `import` 匯入資料夾 `dataset` 
-	    ![](https://i.imgur.com/9aTjx09.png =50%x)
+	    ![](https://i.imgur.com/9aTjx09.png)
 	4. 選擇「標籤名」如資料夾檔名`Label Using Folder Name`
-        ![](https://i.imgur.com/KJ7mzC2.png =50%x)
+        ![](https://i.imgur.com/KJ7mzC2.png)
 	5. 依序匯入五個資料夾後，Lobe 上面就會有五個類別「標籤」
-	    ![](https://i.imgur.com/KKzHZ0g.png =50%x)
+	    ![](https://i.imgur.com/KKzHZ0g.png)
 	6. 等待自動訓練完成後，就可以點選匯出`Export`的`TensorFlow Lite`(支援Linux作業系統，讓裝置可執行訓練模型的工具)
-        ![](https://i.imgur.com/r38d8N6.png =50%x)
+        ![](https://i.imgur.com/r38d8N6.png)
     7. 把訓練好的模型資料夾透過隨身碟放到樹莓派裡面
     8. ==主程式碼==裡對應好對的路徑（`model = ImageModel.load('/home/pi/Lobe/model')`）
 
@@ -130,16 +130,16 @@
 	![](https://i.imgur.com/yRNxAXm.png)
 -  ==**step 5**== 運行馬達測試程式 `motortest.py`，讓我們查看馬達是否能動
 -  ==**step 6**== 現在準備來架設我們的...
-	![](https://i.imgur.com/rAwWzpb.png =70%x)
+	![](https://i.imgur.com/rAwWzpb.png)
 	- 需要的材料有 竹筷 * 1，保麗龍 * 1，紙碗 * 1，白底的厚紙板 * 1
 	- 首先先將白紙板裁成適合的正方形(20cm * 20cm)
-	![](https://i.imgur.com/G9rncZX.png =70%x)
+	![](https://i.imgur.com/G9rncZX.png)
 	- 再來將紙碗底部戳洞讓竹筷穿過，減兩塊小保麗龍上下固定，讓筷子跟紙碗的連接處不會亂動，在碗的邊緣黏上雙面膠與平台相黏，如下圖:
-	![](https://i.imgur.com/9tuUCcb.png =50%x)
+	![](https://i.imgur.com/9tuUCcb.png)
 	- 再來將我們的第二顆伺服馬達的頭?用橡皮筋緊緊地與竹筷捆上，並且用膠帶纏上加固，如下圖
-	- ![](https://i.imgur.com/eTyAtid.png =70%x)
+	- ![](https://i.imgur.com/eTyAtid.png)
     - 上方的平台加桿子已經做好了，接著是下方的兩顆伺服馬達，因為馬達在轉動時，可能自己也會因力量而導致自身不穩，所以我們想到用兩塊保麗龍，並中間割下一塊讓馬達可以放入，將其固定，接著依照設計圖將上下馬達用雙面膠貼黏，如下圖
-    - ![](https://i.imgur.com/DuPi8U2.png =70%x)
+    - ![](https://i.imgur.com/DuPi8U2.png)
     - 最後就是將平台與兩伺服馬達底座相結合，這一來，我們的自動傾倒平台就完成了!!
     - ![](https://i.imgur.com/asxX7L7.png)
 
@@ -231,6 +231,22 @@
 - `cd ~/TrashClassification/`
 - `python3 trashClassification.py`
 
+## Installation
+### 安裝樹梅派的起始流程
+可以用 讀卡機 或 需一台具有SD卡埠的筆電….
+**Step 1**   SD 卡可以插入到讀卡機，用USB port 插入 PC
+**Step 2**   下載官方映像(https://www.raspberrypi.com/software/)
+**Step 3**   將使用設置的SD卡插入Raspberry Pi 底側的microSD卡插槽中
+**Step 4**   先將你要裝的硬體設備接上後，最後在將Type-C的電源線插上，紅色LED亮起
+               (注意: 樹梅派插上電源後會自動開機 !!)
+**Step 5**   第一次啟動要完成初始設定
+             ■ 設置您的國家/地區、語言和時區
+             ■ 輸入Raspberry Pi 的新密碼
+             ■ 連接WiFi，選擇您的WiFi並輸入WiFi密碼
+             ■ 讓精靈檢查對Raspbian的更新並安裝它們(這可能需要一段時間)
+**Step 6**   點選「Finish 」或 「Restart 」，只須重新啟動，來完成更新設定
+
+
 ## Knowledge from Lecture
 - 我們使用 ssh 連線到樹莓派裡 => [課堂教學：ssh連線](https://hackmd.io/@ncnu-opensource/By4H6JLNW/%2Fwl1BJaOIRQqavZ5rn0jMNQ?type=book)
 - 樹莓派 => [課堂教學：樹莓派](https://hackmd.io/@ncnu-opensource/By4H6JLNW/https%3A%2F%2Fhackmd.io%2FNpR3bL4UQViidcrJaqYlpw%3Fview?type=book)
@@ -245,11 +261,11 @@
     - `python3 trashClassification.py`
 - Step 3
     - 長按 3 秒按鈕，使其開始辨識
-- Step 3
-    - 等待平台自動分類並傾倒垃圾至正確的垃圾袋 
 - Step 4
-    - 觀察麵包板上的 LED 燈（會顯示正確分類）
+    - 等待平台自動分類並傾倒垃圾至正確的垃圾袋 
 - Step 5
+    - 觀察麵包板上的 LED 燈（會顯示正確分類）
+- Step 6
     - 觀察網頁上的垃圾快照與分類結果
 
 ## Job Assignment
