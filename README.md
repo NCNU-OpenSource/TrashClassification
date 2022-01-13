@@ -48,7 +48,7 @@
 		- 分別代表 ElecAppliances、Paper、PET bottle、Plastic、other、顯示是否有在拍照。
 	- 將LED燈接到麵包版上，透過杜邦線連到樹莓派上。
 	- 其中一端經過電阻接到樹莓派的編號6腳位，也就是GND接地。另外一端分別是：
-	![](https://www.raspberrypi.com.tw/wp-content/uploads/2014/09/connect-serial-to-raspberry-pi-model-b-plus.png =60%x)
+	![](https://www.raspberrypi.com.tw/wp-content/uploads/2014/09/connect-serial-to-raspberry-pi-model-b-plus.png)
 		- ElecAppliances 👉 編號22的腳位。
 		- Paper 👉 編號17的腳位。
 		- PET bottle 👉 編號27的腳位。
