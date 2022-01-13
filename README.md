@@ -294,6 +294,7 @@
 - 怎麼將pwn包成物件 https://stackoverflow.com/questions/55714636/how-can-i-use-raspberry-pi-gpio-setup-and-pwm-commands-in-init-function-of-a
 - 利用 PWM 控制伺服馬達
 https://blog.everlearn.tw/%E7%95%B6-python-%E9%81%87%E4%B8%8A-raspberry-pi/raspberry-pi-3-mobel-3-%E5%88%A9%E7%94%A8-pwm-%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E9%A6%AC%E9%81%94
+- Python 在 Linux 參考資料：https://ithelp.ithome.com.tw/articles/10243821?sc=hot
 
 ### 線下詢問
 - 李漢偉：題材發想
@@ -301,10 +302,10 @@ https://blog.everlearn.tw/%E7%95%B6-python-%E9%81%87%E4%B8%8A-raspberry-pi/raspb
 - 郭子緯：詢問如何呈現辨識資料 => 用網頁呈現~
 - 墊腳石的店員: 要超大紙箱
 
-### 實作影片
-LSA自動垃圾分類機（外觀瀏覽）: https://youtu.be/YY0xqCNyT58
-垃圾辨識-紙類：https://youtu.be/u16mtRRv8II
-垃圾分類-塑膠：https://youtu.be/LmyQzJbs8Y8
-垃圾分類-寶特瓶：https://youtu.be/7NxcZTrnaDY
-垃圾辨識-電器：https://youtu.be/QOQnBPNl7Aw
-垃圾分類測試-其他類：https://youtu.be/iqVd43zIowE
+### 實作影片(影片裡的啟動流程是用圖形化介面，因為我們要在網頁呈現辨識結果，因此當時這樣執行，拍完影片才想到要用指令執行)
+- LSA自動垃圾分類機（外觀瀏覽）: https://youtu.be/YY0xqCNyT58
+- 垃圾辨識-紙類：https://youtu.be/u16mtRRv8II
+- 垃圾分類-塑膠：https://youtu.be/LmyQzJbs8Y8
+- 垃圾分類-寶特瓶：https://youtu.be/7NxcZTrnaDY
+- 垃圾辨識-電器：https://youtu.be/QOQnBPNl7Aw
+- 垃圾分類測試-其他類：https://youtu.be/iqVd43zIowE
