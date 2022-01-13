@@ -74,7 +74,7 @@
 	6. 等待自動訓練完成後，就可以點選匯出`Export`的`TensorFlow Lite`(支援Linux作業系統，讓裝置可執行訓練模型的工具)
         ![](https://i.imgur.com/r38d8N6.png)
     7. 把訓練好的模型資料夾透過隨身碟放到樹莓派裡面
-    8. ==主程式碼==裡對應好對的路徑（`model = ImageModel.load('/home/pi/Lobe/model')`）
+    8. **主程式碼**裡對應好對的路徑（`model = ImageModel.load('/home/pi/Lobe/model')`）
 
 ### 馬達
 - **目的:** 為了搭建一個自動化的平台，放置垃圾進行影像辨識，並且得到分類結果之後，能夠傾倒垃圾到四個方位中正確的垃圾袋位置
