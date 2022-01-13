@@ -279,7 +279,7 @@
     -  自動化馬達平台架設
 - 訓練模型: `黃日亘`
     -  包含拍照、手動調整模型辨識結果
-- 大家一起做
+- 全部(包含主程式)
     -  將大家寫的東西合在一起、執行
     -  外觀: 支架、固定
     -  PPT、github 內容
@@ -300,3 +300,11 @@ https://blog.everlearn.tw/%E7%95%B6-python-%E9%81%87%E4%B8%8A-raspberry-pi/raspb
 - 陳又瑀：無法辨識其他不屬於四類回收的垃圾 => 影像辨識多一個類別是「other」
 - 郭子緯：詢問如何呈現辨識資料 => 用網頁呈現~
 - 墊腳石的店員: 要超大紙箱
+
+### 實作影片
+LSA自動垃圾分類機（外觀瀏覽）: https://youtu.be/YY0xqCNyT58
+垃圾辨識-紙類：https://youtu.be/u16mtRRv8II
+垃圾分類-塑膠：https://youtu.be/LmyQzJbs8Y8
+垃圾分類-寶特瓶：https://youtu.be/7NxcZTrnaDY
+垃圾辨識-電器：https://youtu.be/QOQnBPNl7Aw
+垃圾分類測試-其他類：https://youtu.be/iqVd43zIowE
