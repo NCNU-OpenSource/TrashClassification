@@ -1,2 +1,2 @@
-"# TrashClassification" 
-Concept Development
+# TrashClassification
+## Concept Development
