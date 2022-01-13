@@ -1,35 +1,32 @@
 ## Concept Development
 - 丟垃圾時，偶爾會不清楚手上的垃圾屬於哪個分類，就呆站在垃圾桶前陷入無窮迴圈的沉思，導致在垃圾桶前大排長龍，甚至最終還是丟錯了垃圾。
 - 我們開發的這個辨識回收種類的儀器，旨意就是在解決這項問題，除了讓垃圾桶前的人潮不會擠的水洩不通，也可以讓垃圾正確分類，使地球更美好XD
-::: info
-暨大宿舍生最大的噩夢，就是每次倒垃圾的時候，只要沒有正確的垃圾分類觀念，隨之而來的即是阿伯「伶刀西郎」的親切問候(哭)，所以為了避免家人遭受無辜的挨罵，我們決定做一個自動分類垃圾的神器，相信有了它，我們將不再恐懼倒垃圾，也不用擔心阿伯有天會氣到中風！
-:::
+
+**暨大宿舍生最大的噩夢，就是每次倒垃圾的時候，只要沒有正確的垃圾分類觀念，隨之而來的即是阿伯「伶刀西郎」的親切問候(哭)，所以為了避免家人遭受無辜的挨罵，我們決定做一個自動分類垃圾的神器，相信有了它，我們將不再恐懼倒垃圾，也不用擔心阿伯有天會氣到中風！**
+
 ## Implementation Resources
 - 軟體
     - Lobe(線上資源，免費): 影像辨識模型訓練
     - Raspberry Pi OS(樹莓派的作業系統)
 - 硬體
-    - [pi Camera X 1 ($1020)](https://shopee.tw/%E6%A8%B9%E8%8E%93%E6%B4%BERaspberry-Pi-%E5%8E%9F%E5%BB%A0%E7%9B%B8%E6%A9%9F%E9%85%8D%E4%BB%B6-Raspberry-Pi-camera-module-v2-i.143152281.4228122711)
-    - 樹莓派(pi4) X 1 ($2360)
-    - 杜邦線(公公、公母、母母)數條 (borrow)
-    - 按鈕 X 1 (borrow)
-    - LED燈泡 X 6 (borrow)
-    - [麵包板 X 2 (一塊 $50)](https://shopee.tw/-%E7%92%B0%E5%B3%B6%E7%A7%91%E6%8A%80-%E9%BA%B5%E5%8C%85%E6%9D%BF830%E5%AD%94%E7%B4%85%E8%97%8D%E7%B7%9A%E7%84%A1%E7%84%8A%E9%BA%B5%E5%8C%85%E6%9D%BF%E5%85%8D%E7%84%8A%E5%BC%8F%E6%B8%AC%E8%A9%A6%E9%9B%BB%E8%B7%AF%E6%9D%BF%E8%90%AC%E8%83%BD%E6%9D%BF-i.280233910.4548815084
-)
-    - 電阻 X 8 (borrow)
-    - 樹莓派的鍵盤 X 1 ($720)
-    - 樹莓派的滑鼠 X 1 ($350)
-    - [馬達 X 2 (一顆 $150)](https://shopee.tw/%E3%80%90%E7%92%B0%E5%B3%B6%E7%A7%91%E6%8A%80%E3%80%91(F3-3-4)%E2%98%85%E5%85%A8%E8%87%BA%E7%8F%BE%E8%B2%A8%E2%98%85-MG996-MG996R-13KG-%E5%A4%A7%E6%89%AD%E5%8A%9B%E8%88%B5%E6%A9%9F-%E6%A9%9F%E5%99%A8%E4%BA%BA-%E9%87%91%E5%B1%AC%E9%BD%92%E8%BC%AA%E8%88%B5%E6%A9%9F-%E4%BC%BA%E6%9C%8D%E9%A6%AC-i.280233910.7843762681
-)
-- 外觀
-    - 紙箱($30)
-    - 竹筷子($)
-    - 紙碗
-    - 橡皮筋 
-    - 雙面膠
-    - 膠帶
-    - 紙膠帶
-    - 塑膠袋(垃圾袋)
+| 設備名稱 | 數量 | 來源 |
+| ---- | ---- | ----------------- |
+|Raspberry Pi 4|1|親友提供|
+|Pi Camera ![](https://i.imgur.com/uAMRAwv.jpg =40%x)|1|[蝦皮](https://shopee.tw/%E6%A8%B9%E8%8E%93%E6%B4%BERaspberry-Pi-%E5%8E%9F%E5%BB%A0%E7%9B%B8%E6%A9%9F%E9%85%8D%E4%BB%B6-Raspberry-Pi-camera-module-v2-i.143152281.4228122711)、MOLi|
+|杜邦線(公公、公母、母母)|數條|MOLi|
+|按鈕|1|MOLi|
+|LED燈泡|6|MOLi|
+|麵包版|2|[蝦皮](https://shopee.tw/-%E7%92%B0%E5%B3%B6%E7%A7%91%E6%8A%80-%E9%BA%B5%E5%8C%85%E6%9D%BF830%E5%AD%94%E7%B4%85%E8%97%8D%E7%B7%9A%E7%84%A1%E7%84%8A%E9%BA%B5%E5%8C%85%E6%9D%BF%E5%85%8D%E7%84%8A%E5%BC%8F%E6%B8%AC%E8%A9%A6%E9%9B%BB%E8%B7%AF%E6%9D%BF%E8%90%AC%E8%83%BD%E6%9D%BF-i.280233910.4548815084)|
+|電阻|8|MOLi|
+|樹莓派鍵盤、滑鼠|各1|親友提供|
+|MG996R馬達|2|[蝦皮](https://shopee.tw/%E3%80%90%E7%92%B0%E5%B3%B6%E7%A7%91%E6%8A%80%E3%80%91(F3-3-4)%E2%98%85%E5%85%A8%E8%87%BA%E7%8F%BE%E8%B2%A8%E2%98%85-MG996-MG996R-13KG-%E5%A4%A7%E6%89%AD%E5%8A%9B%E8%88%B5%E6%A9%9F-%E6%A9%9F%E5%99%A8%E4%BA%BA-%E9%87%91%E5%B1%AC%E9%BD%92%E8%BC%AA%E8%88%B5%E6%A9%9F-%E4%BC%BA%E6%9C%8D%E9%A6%AC-i.280233910.7843762681)|
+|紙箱|1|書局|
+|竹筷子|1|哪裡都拿的到|
+|紙碗|1|書局|
+|橡皮筋|數條|隨處可見|
+|雙面膠|1|親友提供(目的為固定機器，可換成其他固定工具)|
+|紙膠帶|1|親友提供(目的為固定機器，可換成膠帶)|
+|塑膠袋(垃圾袋)|4|親友提供|
 ## Existing Library/Software
 - 基於影像辨識
 - 主程式 `trashClassification.py`
@@ -289,12 +286,16 @@
 ## References
 ### 線上資源
 - 此實作參考教程：https://www.hackster.io/jenfoxbot/make-a-pi-trash-classifier-with-ml-e037a6
-- 按鈕
 - 應用的影像辨識軟體「Lobe」：https://www.lobe.ai/
+- Lobe Python API: https://github.com/lobe/lobe-python#:~:text=For%20Raspberry%20Pi%20OS%20(Raspian)%20run%3A
 - 什麼是「TensorFlow Lite」：https://www.tensorflow.org/lite/guide?hl=zh-tw
 - 前端-bootstrap：https://getbootstrap.com/
 - 怎麼將pwn包成物件 https://stackoverflow.com/questions/55714636/how-can-i-use-raspberry-pi-gpio-setup-and-pwm-commands-in-init-function-of-a
+- 利用 PWM 控制伺服馬達
+https://blog.everlearn.tw/%E7%95%B6-python-%E9%81%87%E4%B8%8A-raspberry-pi/raspberry-pi-3-mobel-3-%E5%88%A9%E7%94%A8-pwm-%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E9%A6%AC%E9%81%94
 
 ### 線下詢問
+- 李漢偉：題材發想
+- 陳又瑀：無法辨識其他不屬於四類回收的垃圾 => 影像辨識多一個類別是「other」
 - 郭子緯：詢問如何呈現辨識資料 => 用網頁呈現~
 - 墊腳石的店員: 要超大紙箱
