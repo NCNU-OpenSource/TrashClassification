@@ -1,12 +1,10 @@
 ## Concept Development
-> **發展理念：為什麼要開發這個東西？有什麼用？**
 - 丟垃圾時，偶爾會不清楚手上的垃圾屬於哪個分類，就呆站在垃圾桶前陷入無窮迴圈的沉思，導致在垃圾桶前大排長龍，甚至最終還是丟錯了垃圾。
 - 我們開發的這個辨識回收種類的儀器，旨意就是在解決這項問題，除了讓垃圾桶前的人潮不會擠的水洩不通，也可以讓垃圾正確分類，使地球更美好XD
 ::: info
 暨大宿舍生最大的噩夢，就是每次倒垃圾的時候，只要沒有正確的垃圾分類觀念，隨之而來的即是阿伯「伶刀西郎」的親切問候(哭)，所以為了避免家人遭受無辜的挨罵，我們決定做一個自動分類垃圾的神器，相信有了它，我們將不再恐懼倒垃圾，也不用擔心阿伯有天會氣到中風！
 :::
 ## Implementation Resources
-> **應用到的資源：樹莓派？(硬體、軟體？)<有用到都要列出來>、買的詳列從哪買的(價錢)**
 - 軟體
     - Lobe(線上資源，免費): 影像辨識模型訓練
     - Raspberry Pi OS(樹莓派的作業系統)
@@ -33,14 +31,12 @@
     - 紙膠帶
     - 塑膠袋(垃圾袋)
 ## Existing Library/Software
-> **使用了哪些現有的函式庫或軟體 要在這個部分說明條列**
 - 基於影像辨識
 - 主程式 `trashClassification.py`
     - [主程式-參考網址](https://www.hackster.io/jenfoxbot/make-a-pi-trash-classifier-with-ml-e037a6)
     - 根據上方網址的程式碼做更改，新增馬達轉動的功能、將照片路徑加入資料庫
 
 ## Implementation Process
-> **實作過程**
 - 在家目錄下 clone 我們的檔案
     - `cd ~`
     - `git clone https://github.com/Huei-Lin-Lin/TrashClassification.git`
@@ -236,12 +232,11 @@
 - `python3 trashClassification.py`
 
 ## Knowledge from Lecture
-> **從我們這堂課那部分學到的：**
 - 我們使用 ssh 連線到樹莓派裡 => [課堂教學：ssh連線](https://hackmd.io/@ncnu-opensource/By4H6JLNW/%2Fwl1BJaOIRQqavZ5rn0jMNQ?type=book)
 - 樹莓派 => [課堂教學：樹莓派](https://hackmd.io/@ncnu-opensource/By4H6JLNW/https%3A%2F%2Fhackmd.io%2FNpR3bL4UQViidcrJaqYlpw%3Fview?type=book)
 - 我們使用 Apache2 => [課堂教學：Web Sever](https://hackmd.io/@ncnu-opensource/By4H6JLNW/%2FI_xmNNBvSEWLw0mcMDhcMA?type=book)
+
 ## Usage
-> **解釋怎麼使用：**
 - Step 1
     - 放入要辨識的垃圾到平台上
 - Step 2
@@ -258,7 +253,6 @@
     - 觀察網頁上的垃圾快照與分類結果
 
 ## Job Assignment
-> **作業分配：《組員貢獻多少%資源》**
 - 後端: `林惠霖`
     -  (python) 每次拍完照片就將照片 insert 到資料庫裡
     -  PHP: fetch 資料
@@ -277,7 +271,6 @@
     -  PPT、github 內容
     -  錄實作影片
 ## References
-> **我在網路上有參考到什麼資料：《詳列：不管線上資源或線下詢問》**
 ### 線上資源
 - 此實作參考教程：https://www.hackster.io/jenfoxbot/make-a-pi-trash-classifier-with-ml-e037a6
 - 按鈕
