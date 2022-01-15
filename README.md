@@ -138,11 +138,11 @@
 	- 再來將紙碗底部戳洞讓竹筷穿過，減兩塊小保麗龍上下固定，讓筷子跟紙碗的連接處不會亂動，在碗的邊緣黏上雙面膠與平台相黏，如下圖:
 	![](https://i.imgur.com/9tuUCcb.png)
 	- 再來將我們的第二顆伺服馬達的頭?用橡皮筋緊緊地與竹筷捆上，並且用膠帶纏上加固，如下圖
-	- ![](https://i.imgur.com/eTyAtid.png)
+	![](https://i.imgur.com/eTyAtid.png)
     - 上方的平台加桿子已經做好了，接著是下方的兩顆伺服馬達，因為馬達在轉動時，可能自己也會因力量而導致自身不穩，所以我們想到用兩塊保麗龍，並中間割下一塊讓馬達可以放入，將其固定，接著依照設計圖將上下馬達用雙面膠貼黏，如下圖
-    - ![](https://i.imgur.com/DuPi8U2.png)
+    ![](https://i.imgur.com/DuPi8U2.png)
     - 最後就是將平台與兩伺服馬達底座相結合，這一來，我們的自動傾倒平台就完成了!!
-    - ![](https://i.imgur.com/asxX7L7.png)
+    ![](https://i.imgur.com/asxX7L7.png)
 
 ### 垃圾分類桶構造
 - ![](https://i.imgur.com/ga2Iayr.png)
@@ -154,26 +154,26 @@
 	* `sudo apt-get install apache2`
 	* `sudo service apache2 status`
 	    * 可以看到 apache2 目前的狀態是開啟的，預設是開啟的
-	    * ![](https://i.imgur.com/LCiVKI8.png)
+	    ![](https://i.imgur.com/LCiVKI8.png)
 2. 更改 Apache2 設定檔
 	* `sudo service apache2 stop`
 	* `sudo apt-get install vim`
 	* `sudo vim /etc/apache2/ports.conf`
 	    * 原本是 `Listen 80`，改成 `Listen 8081`
-	    * ![](https://i.imgur.com/n3DgDwK.png)
+	    ![](https://i.imgur.com/n3DgDwK.png)
 	* 開啟 apache2  
 	    * `sudo service apache2 start`  
 	* 看
 	    * `sudo service apache2 status`  
 	    * `sudo netstat -ntupla`
 	        * 可以看到 apache2 跑在 8081 上
-	        * ![](https://i.imgur.com/7U0izmB.png)
+	        ![](https://i.imgur.com/7U0izmB.png)
 3. 安裝 PHP 開發環境
 	* `sudo apt-get install php libapache2-mod-php` 
 	* `cd /var/www`
 	* `sudo chown pi:root html`
 	* `ls -l`
-	* ![](https://i.imgur.com/NVJpEXI.png)
+	![](https://i.imgur.com/NVJpEXI.png)
 4. 安裝設定MySQL資料庫系統
 	* 安裝需要用到的套件
 		*  `sudo apt install mariadb-server php7.4-fpm php7.4-mysql`
@@ -184,11 +184,11 @@
 	* 建立一個能夠針對 raspberrypi 資料庫操作的使用者
 		* `@localhost`：這個使用者只能由這台本機登入  
 		* `CREATE USER 'raspberrypi'@'localhost' IDENTIFIED BY 'raspberrypi_password';`
-		* ![](https://i.imgur.com/HL2Fieu.png)
+		![](https://i.imgur.com/HL2Fieu.png)
 		* `GRANT ALL PRIVILEGES ON raspberrypi.* TO "raspberrypi"@"localhost";`
 		* `FLUSH PRIVILEGES;`
 		* `EXIT;`
-		* ![](https://i.imgur.com/63mJV0y.png)
+		![](https://i.imgur.com/63mJV0y.png)
 6. 安裝MySQL管理工具phpMyAdmin
     * 安裝phpMyAdmin
         * `sudo apt-get  install phpmyadmin`
@@ -196,21 +196,21 @@
         * `sudo mysql –u raspberrypi –p` 
     * `sudo vim /etc/apache2/apache2.conf`
         * 到最下面輸入: `Include /etc/phpmyadmin/apache.conf` 再存檔
-        * ![](https://i.imgur.com/upzF98Z.png)
+        ![](https://i.imgur.com/upzF98Z.png)
     * `sudo service apache2 restart`
     * 打開瀏覽器輸入 `localhost:8081/phpmyadmin/`
-    * ![](https://i.imgur.com/T0AeiAR.png)
+    ![](https://i.imgur.com/T0AeiAR.png)
 * 用剛剛建立的使用者去登入
     * 帳號: `raspberrypi`
     * 密碼: `raspberrypi_password`
-    * ![](https://i.imgur.com/yeSbqRw.png)
+    ![](https://i.imgur.com/yeSbqRw.png)
 * 在 `raspberrypi` 的資料庫下新增一個 `trash` 的資料表
     * 結構如下 :point_down:
-    * ![](https://i.imgur.com/9oq9wLW.png)
+    ![](https://i.imgur.com/9oq9wLW.png)
 * 在 `dbconfig.py` 改資料庫相關資料
-    * ![](https://i.imgur.com/1n5mM9r.png)
+    ![](https://i.imgur.com/1n5mM9r.png)
     * 如果忘了 MySQL 相關資料，可以到 `/etc/phpmyadmin` 下的 `config.inc.php` 看相關資料
-    * ![](https://i.imgur.com/ZN8Wvp8.png)
+    ![](https://i.imgur.com/ZN8Wvp8.png)
 * 執行測試檔案 `trashPhoto.py`
     * `cd ~/TrashClassification/`
     * `python3 trashPhoto.py`
@@ -224,7 +224,7 @@
 8. 改 Apache 預設讀取哪個檔案
 	* `sudo vim /etc/apache2/apache2.conf` 
 	* 新增 `DirectoryIndex listUI.php`
-	* ![](https://i.imgur.com/NYptDec.png)
+	![](https://i.imgur.com/NYptDec.png)
 	* `sudo service apache2 reload`
 - 架好了 !
     - ![](https://i.imgur.com/vu6fWRC.png)
@@ -306,7 +306,7 @@ https://blog.everlearn.tw/%E7%95%B6-python-%E9%81%87%E4%B8%8A-raspberry-pi/raspb
 - 墊腳石的店員：要超大紙箱
 
 ### 實作影片
-(影片裡的啟動流程是用圖形化介面，因為我們要在網頁呈現辨識結果，因此當時這樣執行，拍完影片才想到要拍用指令執行)
+(影片裡的啟動流程是用圖形化介面，因為我們要在網頁呈現辨識結果而用了這個，因此當時這樣執行，拍完影片才想到要拍用指令執行)
 - LSA自動垃圾分類機（外觀瀏覽）: https://youtu.be/YY0xqCNyT58
 - 垃圾辨識-紙類：https://youtu.be/u16mtRRv8II
 - 垃圾分類-塑膠：https://youtu.be/LmyQzJbs8Y8
